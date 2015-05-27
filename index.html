@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="GitBit">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1" />
+  <title>GitBit</title>
+  <meta name="authors" content="">
+
+  <!-- styles -->
+  <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
+
+  <!-- custom -->
+  <link rel="stylesheet" type="text/css" href="styles/angular-style.css">
+</head>
+<body layout="column" ng-controller="mainController">
+  <md-toolbar layout="row">
+      <button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button menuBtn">
+        <span class="md-visually-hidden">Menu</span>
+      </button>
+      <h1 class="md-toolbar-tools" layout-align-gt-sm="center">Hello World</h1>
+    </md-toolbar>
+    <div layout="row" flex>
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+          
+        </md-sidenav>
+        <div layout="column" flex id="content">
+            <md-content layout="column" flex class="md-padding">
+
+            </md-content>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    
+    <!-- Angular Material Dependencies -->
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+
+    <!-- controllers -->    
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/controllers/mainController.js"></script>
+</body>
+</html>
