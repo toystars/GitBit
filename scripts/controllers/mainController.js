@@ -52,9 +52,9 @@ app.controller('mainController', ['$scope', '$mdSidenav', 'apiCall', function($s
 
   // function that consumes the apiCall service to fetch the data from github
   $scope.getUserObject = function(username) {
-    if(!$scope.searchQuery) {
-      $scope.show = false;
-    }
+    $scope.show = false;
+    $scope.tip = false;
+
     apiCall.fetchUser(username).success(manipulateApiResponse);
     apiCall.fetchFollowers(username).success(manipulateFollowersArray);
     apiCall.fetchFollowing(username).success(manipulateFollowingArray);
