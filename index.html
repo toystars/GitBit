@@ -87,10 +87,10 @@
         <!-- The Chips -->
         <md-chips>
           <md-chip>
-            <strong><i class="fa fa-users"></i> {{ followers }} Followers</strong>
+            <strong><i class="fa fa-users"></i> {{ followersNumber }} Followers</strong>
           </md-chip>
           <md-chip>
-            <strong><i class="fa fa-users"></i> {{ following }} Following</strong>
+            <strong><i class="fa fa-users"></i> {{ followingNumber }} Following</strong>
           </md-chip>
           <md-chip>
             <i class="fa fa-inbox"></i> {{ numberOfPublicRepos }} Repository
@@ -130,13 +130,55 @@
         </md-card>
 
         <!-- The main container -->
-        <div layout="row" flex>
-          <md-card flex class="main-container-card">
-            <md-card-content>
-              <md-content class="main-content">
-                 <!-- other info here -->
-              </md-content>
-          </md-card>
+        <div>
+          <md-content class="md-padding">
+            <md-tabs md-dynamic-height md-border-bottom>
+              <md-tab label="Repository">
+                <md-content class="md-padding">
+                   <md-list-item class="md-2-line outer-list" ng-repeat="repo in repoArray">
+                    <a href="{{ repo.html_url }}" class="repeater-container" target="_blank">
+                      <md-list-item class="md-2-line inner-list">
+                        <div class="md-list-item-text">
+                          <h4>{{ repo.name }}</h4>
+                          <h4>{{ repo.description }}</h4>
+                          <h4>{{ repo.login }}</h4>
+                          <h4>{{ repo.size }} Files</h4>
+                        </div>
+                      </md-list-item>
+                    </a>
+                  </md-list-item>
+                </md-content>
+              </md-tab>
+              <md-tab label="Followers">
+                <md-content class="md-padding">
+                  <md-list-item class="md-2-line outer-list" ng-repeat="followers in followersArray">
+                    <a href="{{ followers.html_url }}" class="repeater-container" target="_blank">
+                      <md-list-item class="md-2-line inner-list">
+                        <img class="avatar" ng-src="{{ followers.avatar_url }}" alt="{{ followers.login }}">
+                        <div class="md-list-item-text">
+                          <h4>{{ followers.login }}</h4>
+                        </div>
+                      </md-list-item>
+                    </a>
+                  </md-list-item>
+                </md-content>
+              </md-tab>
+              <md-tab label="Following">
+                <md-content class="md-padding">
+                  <md-list-item class="md-2-line outer-list" ng-repeat="following in followingArray">
+                    <a href="{{ following.html_url }}" class="repeater-container" target="_blank">
+                      <md-list-item class="md-2-line inner-list">
+                        <img class="avatar" ng-src="{{ following.avatar_url }}" alt="{{ following.login }}">
+                        <div class="md-list-item-text">
+                          <h4>{{ following.login }}</h4>
+                        </div>
+                      </md-list-item>
+                    </a>
+                  </md-list-item>
+                </md-content>
+              </md-tab>
+            </md-tabs>
+          </md-content>
         </div>
       </md-content>
     </div>    

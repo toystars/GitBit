@@ -50,6 +50,18 @@ md-divider {
   width: 90%;
   margin: auto;
 }
+
+.outer-list {
+  padding: 10px !important;
+}
+
+.outer-list .repeater-container {
+  display: block;
+}
+
+.inner-list {
+  padding: 10px !important;
+}
  
 .gitbit_info img{  
   height: auto;
@@ -74,6 +86,13 @@ md-divider {
   border: 2px solid #ddd;
 }
 
+.avatar {
+  width: 50px;
+  height: auto;
+  border-radius: 100%;
+  border: 2px solid #ddd;
+}
+
 .username, .email, .location {
   margin-top: -10px;
   color: #747474;
@@ -89,11 +108,6 @@ md-divider {
 
 .search_field {
   padding: 10px 5px;
-}
-
-.main-container-card {
-  overflow-y: scroll;
-  height: 545px;
 }
 
 .main-content {

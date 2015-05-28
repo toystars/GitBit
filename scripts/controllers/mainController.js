@@ -27,11 +27,13 @@ app.controller('mainController', ['$scope', '$mdSidenav', 'apiCall', function($s
   // function that assigns data to followers models
   function manipulateFollowersArray(data) {
     $scope.followersArray = data;
+    $scope.followersNumber = $scope.followersArray.length;
   }
 
   // function that assigns data to following models
   function manipulateFollowingArray(data) {
     $scope.followingArray = data;
+    $scope.followingNumber = $scope.followingArray.length;
   }
 
   // function that assigns data to repo models
@@ -42,21 +44,10 @@ app.controller('mainController', ['$scope', '$mdSidenav', 'apiCall', function($s
   // function that consumes the apiCall service to fetch the data from github
   $scope.getUserObject = function(username) {
     apiCall.fetchUser(username).success(manipulateApiResponse);
-  };
-
-  $scope.getFollowersArray = function(username) {
     apiCall.fetchFollowers(username).success(manipulateFollowersArray);
-  };
-
-  $scope.getFollowingArray = function(username) {
     apiCall.fetchFollowing(username).success(manipulateFollowingArray);
-  };
-
-  $scope.getRepoArray = function(username) {
     apiCall.fetchRepo(username).success(manipulateRepoArray);
-  }
-
-
+  };
 }]);
 
 
