@@ -26,7 +26,7 @@
     <!-- UserProfile -->
     <div class="profile">
       <div>
-        <img ng-src="{{ userImg }}" alt="Profile Picture" class="md-avatar face">
+        <img ng-src="{{ userImageUrl }}" alt="Profile Picture" class="md-avatar face">
         <md-tooltip>
             Profile Picture
         </md-tooltip>
@@ -34,10 +34,10 @@
 
       <div class="md-list-item-text">
         <!-- Username -->
-        <h1> {{ fullName }} </h1>
+        <h1> {{ userFullName }} </h1>
 
         <!-- user name -->
-        <h4 class="username"><i class="fa fa-user"></i> {{ userName }}
+        <h4 class="username"><i class="fa fa-user"></i> {{ userLogin }}
           <md-tooltip>
             UserName
           </md-tooltip>
@@ -58,7 +58,7 @@
         </h5>
 
         <!-- hire -->
-        <h4 class="userHire"><i class="fa fa-briefcase"></i><strong> Hireable: {{ userHire }}</strong></h4>
+        <h4 class="userHire"><i class="fa fa-briefcase"></i><strong> Hireable: {{ userAvailableForHire }}</strong></h4>
       </div>
 
 
@@ -68,7 +68,7 @@
         <md-chips>
           <md-chip>
             <!-- Repo Url -->
-            <strong><i class="fa fa-link"></i> <a href="{{ userGithubURL }}"> Repository URL</a>
+            <strong><i class="fa fa-link"></i> <a href="{{ repoUrl }}"> Repository URL</a>
               <md-tooltip>
                 Repo URL
               </md-tooltip>
@@ -76,7 +76,7 @@
           </md-chip>
           <md-chip>
             <!-- Github Url -->
-            <strong><i class="fa fa-github"></i><a href="{{ userGithubURL }}"> Github URL</a>
+            <strong><i class="fa fa-github"></i><a href="{{ userProfileLink }}"> Github URL</a>
               <md-tooltip>
                 Github URL
               </md-tooltip>
@@ -93,7 +93,7 @@
             <strong><i class="fa fa-users"></i> {{ following }} Following</strong>
           </md-chip>
           <md-chip>
-            <i class="fa fa-inbox"></i> {{ NumOfRepo }} Repositories
+            <i class="fa fa-inbox"></i> {{ numberOfPublicRepos }} Repository
           </md-chip>
           <md-chip>
             <i class="fa fa-building"></i> Works at {{ userCompany }}
@@ -115,12 +115,12 @@
                 <form layout="row">
                   <md-input-container flex>
                     <label>Search GitBit (e.g. andela-example)</label>
-                    <input required name="search" ng-model="search">
-                    <div ng-messages="search.$error">
+                    <input required name="searchQuery" ng-model="searchQuery">
+                    <div ng-messages="searchQuery.$error">
                       <div ng-message="required">This is required.</div>
                     </div>
                   </md-input-container>
-                  <md-button class="md-fab md-primary md-icon-button" type="submit" aria-label="search" ng-submit="searchUser()">
+                  <md-button class="md-fab md-primary md-icon-button" type="submit" aria-label="search" ng-click="getUserObject(searchQuery)">
                     <i class="fa fa-search"></i>
                   </md-button>
                 </form>
