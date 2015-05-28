@@ -104,7 +104,7 @@ src: url('../fonts/roboto/Roboto-Regular.ttf');}
 }
 
 .search_field {
-  padding: 5px 5px;
+  padding: -5px;
 }
 
 .main-content {
@@ -141,5 +141,5 @@ a[type="link"]{
 
 .md-subhead {
   font-size: 12px;
-  margin: 8px;
+  margin: 8px 8px 10px 8px;
 }

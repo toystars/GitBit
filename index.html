@@ -159,9 +159,9 @@
                     <a href="{{ followers.html_url }}" type="link" target="_blank">
                       <md-list-item class="inner-list">
                         <img class="avatar" ng-src="{{ followers.avatar_url }}" alt="{{ followers.login }}">
-                        <div class="md-list-item-text">
-                          <h4>{{ followers.login }}</h4>
-                        </div>
+                        <md-tooltip>
+                          {{ followers.login }}
+                        </md-tooltip>
                       </md-list-item>
                     </a>
                   </md-list-item>
@@ -172,11 +172,11 @@
                 <md-content class="md-padding">
                   <md-list-item class="outer-list" ng-repeat="following in followingArray">
                     <a href="{{ following.html_url }}" type="link" target="_blank">
-                      <md-list-item>
+                      <md-list-item class="inner-list">
                         <img class="avatar" ng-src="{{ following.avatar_url }}" alt="{{ following.login }}">
-                        <div class="inner-list">
-                          <h4>{{ following.login }}</h4>
-                        </div>
+                        <md-tooltip>
+                          {{ following.login }}
+                        </md-tooltip>
                       </md-list-item>
                     </a>
                   </md-list-item>
