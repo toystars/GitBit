@@ -143,3 +143,7 @@ a[type="link"]{
   font-size: 12px;
   margin: 8px 8px 10px 8px;
 }
+
+.no-content {
+  margin: 200px auto 0px auto;
+}

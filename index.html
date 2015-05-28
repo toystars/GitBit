@@ -24,7 +24,7 @@
       <h1 class="md-toolbar-tools gitbit_info" layout-align-gt-sm="center"><img src="images/brand.png"></h1>
 
     <!-- UserProfile -->
-    <div class="profile">
+    <div class="profile" ng-show="show" ng-cloak>
       <div>
         <img ng-src="{{ userImageUrl }}" alt="Profile Picture" class="md-avatar face">
         <md-tooltip>
@@ -104,6 +104,7 @@
 
       </div>
     </div>
+    <h1 class="no-content" ng-hide="tip">No Content!</h1>
     </md-sidenav>
 
     <!-- The content area -->
@@ -132,7 +133,7 @@
         </md-card>
 
         <!-- The main container -->
-        <div>
+        <div ng-show="show">
           <md-content class="md-padding">
             <md-tabs md-dynamic-height md-border-bottom>
               <!-- repository repeater -->
@@ -185,6 +186,9 @@
             </md-tabs>
           </md-content>
         </div>
+        <p ng-hide="tip">GitBit provides enables you grab a github user and get detailed  information about such user...<br>
+          Enter a Github user's username and click on search (or tap the enter button). 
+        </p>
       </md-content>
     </div>    
   </div>

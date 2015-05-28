@@ -4,6 +4,9 @@ app.controller('mainController', ['$scope', '$mdSidenav', 'apiCall', function($s
     $mdSidenav(menuId).toggle();
   };
 
+  $scope.show = false;
+  $scope.tip = false;
+
   // app models
   $scope.searchQuery = '';  // model for search query
 
@@ -39,10 +42,19 @@ app.controller('mainController', ['$scope', '$mdSidenav', 'apiCall', function($s
   // function that assigns data to repo models
   function manipulateRepoArray(data) {
     $scope.repoArray = data;
+    $scope.show = true;
+    $scope.tip = true;
+    if ($scope.userLogin === 'undefined') {
+      $scope.show = false;
+      $scope.tip = false;
+    }
   }
 
   // function that consumes the apiCall service to fetch the data from github
   $scope.getUserObject = function(username) {
+    if(!$scope.searchQuery) {
+      $scope.show = false;
+    }
     apiCall.fetchUser(username).success(manipulateApiResponse);
     apiCall.fetchFollowers(username).success(manipulateFollowersArray);
     apiCall.fetchFollowing(username).success(manipulateFollowingArray);
