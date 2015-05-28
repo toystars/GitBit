@@ -49,22 +49,3 @@ app.controller('mainController', ['$scope', '$mdSidenav', 'apiCall', function($s
     apiCall.fetchRepo(username).success(manipulateRepoArray);
   };
 }]);
-
-
-
-/*
-// app models
-  $scope.searchQuery = '';
-  $scope.userFullName = '';
-  $scope.userImageUrl = '';
-  $scope.repoUrl = '';
-  $scope.userProfileLink = '';
-  $scope.followersApiUrl = '';
-  $scope.followingApiUrl = '';
-  $scope.numberOfPublicRepos = 0;
-  $scope.userLogin = '';
-  $scope.userEmail = '';
-  $scope.userLocation = '';
-  $scope.userAvailableForHire = false;
-  $scope.userCompany = '';
-*/
