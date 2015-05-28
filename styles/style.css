@@ -45,41 +45,50 @@ src: url('../fonts/roboto/Roboto-Regular.ttf');}
   border: none;
   margin-left: 16px;
 }
-md-list .md-button {
-  color: inherit;
-  text-align: left;
-  width: 100%;
+
+md-divider {
+  width: 90%;
+  margin: auto;
 }
-
-/*.gitbit_info-container {
-  position: absolute; left: -18px;
-  margin-top: 70px;
-}*/
-
-.gitbit_info{  
-  font-size: 40px;
-  font-family: monospace;
-  color: #ddd;
+ 
+.gitbit_info img{  
+  height: auto;
+  width: 120px;
+  position: absolute;
+  left: -35px;
+  top: -20px;
 }
 
 .profile {
   margin: auto;
   text-align: center;
+  position: relative;
+  top: -40px;
+
 }
 
 .face {
   width: 190px;
   height: auto;
   border-radius: 100%;
-  border: 1px solid #ddd; 
+  border: 2px solid #ddd;
 }
 
-.email {
-  font-size: 12px;
+.username, .email, .location {
+  margin-top: -10px;
+  color: #747474;
+}
+
+.gitbit_userbio{
+  padding: 15px;
 }
 
 .search-card {
   margin-top: -10px;
+}
+
+.search_field {
+  padding: 10px 5px;
 }
 
 .main-container-card {
@@ -93,4 +102,9 @@ md-list .md-button {
 
 md-input-container label {
   top: -5px;
+}
+
+a {
+  text-decoration: none;
+  color: #3F51B5;
 }
