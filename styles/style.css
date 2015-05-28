@@ -46,7 +46,7 @@ src: url('../fonts/roboto/Roboto-Regular.ttf');}
   margin-left: 16px;
 }
 
-.hr{
+.hr {
   width: 90%;
   margin: 20px;
 }
@@ -77,7 +77,7 @@ src: url('../fonts/roboto/Roboto-Regular.ttf');}
 }
 
 .face {
-  width: 190px;
+  width: 160px;
   height: auto;
   border-radius: 100%;
   border: 2px solid #ddd;
@@ -146,4 +146,11 @@ a[type="link"]{
 
 .no-content {
   margin: 200px auto 0px auto;
+}
+
+.tip {
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 150px auto;
 }
