@@ -3,20 +3,10 @@
   andgular in-built $http service for AJAX calls
 */
 
-app.service('apiCall', ['$http', function($http) {
-
-  // function that performs the api call using the $http service
-  function fetchUser(serachArg) {
-    $http.get('https://api.github.com/search/users?q=' + serachArg)
-      .success(function(response) {
-        var httpResponse = response;
-        return httpResponse;
-      });
-  }
-
-  // return the service object
-   return {
-    fetchUser: fetchUser;
+app.factory('apiCall',['$http', function($http) {
+  return {
+    fetchUser: function(username) {
+      return  $http.get('https://api.github.com/search/users?q=' + username);
+    }
   };
-
 }]);
