@@ -9,26 +9,138 @@
   <!-- styles -->
   <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
 
-  <!-- custom -->
-  <link rel="stylesheet" type="text/css" href="styles/angular-style.css">
-</head>
-<body layout="column" ng-controller="mainController">
-  <md-toolbar layout="row">
-      <button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button menuBtn">
-        <span class="md-visually-hidden">Menu</span>
-      </button>
-      <h1 class="md-toolbar-tools" layout-align-gt-sm="center">Hello World</h1>
-    </md-toolbar>
-    <div layout="row" flex>
-        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-          
-        </md-sidenav>
-        <div layout="column" flex id="content">
-            <md-content layout="column" flex class="md-padding">
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" type="text/css" href="styles/font-awesome.min.css">
 
-            </md-content>
-        </div>
+  <!-- custom -->
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body layout="column" ng-controller="mainController" ng-cloak>
+
+  <!-- The left sidebar -->
+  <div layout="row" flex>
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+      <!-- The top toolbar -->
+      <h1 class="md-toolbar-tools gitbit_info" layout-align-gt-sm="center"><img src="images/brand.png"></h1>
+
+    <!-- UserProfile -->
+    <div class="profile">
+      <div>
+        <img ng-src="{{ userImg }}" alt="Profile Picture" class="md-avatar face">
+        <md-tooltip>
+            Profile Picture
+        </md-tooltip>
+      </div>
+
+      <div class="md-list-item-text">
+        <!-- Username -->
+        <h1> {{ fullName }} </h1>
+
+        <!-- user name -->
+        <h4 class="username"><i class="fa fa-user"></i> {{ userName }}
+          <md-tooltip>
+            UserName
+          </md-tooltip>
+        </h4>
+
+        <!-- email -->
+        <h4 class="email"><i class="fa fa-envelope-o"></i><strong> {{ userEmail }}</strong>
+          <md-tooltip>
+            Email
+          </md-tooltip>
+        </h4>
+
+        <!-- location -->
+        <h5 class="location"><i class="fa fa-map-marker"></i><strong> {{ userLocation }}</strong>
+          <md-tooltip>
+            Location
+          </md-tooltip>
+        </h5>
+
+        <!-- hire -->
+        <h4 class="userHire"><i class="fa fa-briefcase"></i><strong> Hireable: {{ userHire }}</strong></h4>
+      </div>
+
+
+      <div class="md-list-item-text gitbit_userbio">
+        
+        <!-- The Chips -->
+        <md-chips>
+          <md-chip>
+            <!-- Repo Url -->
+            <strong><i class="fa fa-link"></i> <a href="{{ userGithubURL }}"> Repository URL</a>
+              <md-tooltip>
+                Repo URL
+              </md-tooltip>
+            </strong>
+          </md-chip>
+          <md-chip>
+            <!-- Github Url -->
+            <strong><i class="fa fa-github"></i><a href="{{ userGithubURL }}"> Github URL</a>
+              <md-tooltip>
+                Github URL
+              </md-tooltip>
+            </strong>
+          </md-chip>
+        </md-chips>
+        
+        <!-- The Chips -->
+        <md-chips>
+          <md-chip>
+            <strong><i class="fa fa-users"></i> {{ followers }} Followers</strong>
+          </md-chip>
+          <md-chip>
+            <strong><i class="fa fa-users"></i> {{ following }} Following</strong>
+          </md-chip>
+          <md-chip>
+            <i class="fa fa-inbox"></i> {{ NumOfRepo }} Repositories
+          </md-chip>
+          <md-chip>
+            <i class="fa fa-building"></i> Works at {{ userCompany }}
+          </md-chip>
+        </md-chips>
+
+      </div>
     </div>
+    </md-sidenav>
+
+    <!-- The content area -->
+    <div layout="column" flex id="content">
+      <md-content layout="column" flex class="md-padding">
+        <!-- The search container -->
+        <md-card class="search-card">
+          <md-card-content>
+            <div class="search_field">
+              <md-content>
+                <form layout="row">
+                  <md-input-container flex>
+                    <label>Search GitBit (e.g. andela-example)</label>
+                    <input required name="search" ng-model="search">
+                    <div ng-messages="search.$error">
+                      <div ng-message="required">This is required.</div>
+                    </div>
+                  </md-input-container>
+                  <md-button class="md-fab md-primary md-icon-button" type="submit" aria-label="search" ng-submit="searchUser()">
+                    <i class="fa fa-search"></i>
+                  </md-button>
+                </form>
+              </md-content>
+            </div>
+          </md-card-content>
+        </md-card>
+
+        <!-- The main container -->
+        <div layout="row" flex>
+          <md-card flex class="main-container-card">
+            <md-card-content>
+              <md-content class="main-content">
+                 <!-- other info here -->
+              </md-content>
+          </md-card>
+        </div>
+      </md-content>
+    </div>    
+  </div>
 
     <!-- Scripts -->
     

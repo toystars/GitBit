@@ -1,0 +1,110 @@
+/*  IMPORTED FONTS */
+
+@font-face {  font-family: "CaviarDreams";
+src: url("../fonts/caviar_dreams/CaviarDreams.ttf");}
+
+@font-face {  font-family: "CaviarDreams-Bold";
+src: url("../fonts/caviar_dreams/CaviarDreams_Bold.ttf");}
+
+@font-face {  font-family: "Roboto-BoldCondensed";
+src: url('../fonts/roboto/Roboto-BoldCondensed.ttf');}
+
+@font-face {  font-family: "Roboto-Bold";
+src: url('../fonts/roboto/Roboto-Bold.ttf');}
+
+@font-face {  font-family: "Roboto-Condensed";
+src: url('../fonts/roboto/Roboto-Condensed.ttf');}
+
+@font-face {  font-family: "Roboto-Light";
+src: url('../fonts/roboto/Roboto-Light.ttf');}
+
+@font-face {  font-family: "Roboto-Medium";
+src: url('../fonts/roboto/Roboto-Medium.ttf');}
+
+@font-face {  font-family: "Roboto-Regular";
+src: url('../fonts/roboto/Roboto-Regular.ttf');}
+
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar {width: 6px; height: 2px;}
+::-webkit-scrollbar-track {
+  background-color: #ddd;
+  opacity: .2;
+  margin: 2px 0px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 5px;
+}
+
+.menuBtn {
+  background-color: transparent;
+  border: none;
+  margin-left: 16px;
+}
+
+md-divider {
+  width: 90%;
+  margin: auto;
+}
+ 
+.gitbit_info img{  
+  height: auto;
+  width: 120px;
+  position: absolute;
+  left: -35px;
+  top: -20px;
+}
+
+.profile {
+  margin: auto;
+  text-align: center;
+  position: relative;
+  top: -40px;
+
+}
+
+.face {
+  width: 190px;
+  height: auto;
+  border-radius: 100%;
+  border: 2px solid #ddd;
+}
+
+.username, .email, .location {
+  margin-top: -10px;
+  color: #747474;
+}
+
+.gitbit_userbio{
+  padding: 15px;
+}
+
+.search-card {
+  margin-top: -10px;
+}
+
+.search_field {
+  padding: 10px 5px;
+}
+
+.main-container-card {
+  overflow-y: scroll;
+  height: 545px;
+}
+
+.main-content {
+  padding: 6px;
+}
+
+md-input-container label {
+  top: -5px;
+}
+
+a {
+  text-decoration: none;
+  color: #3F51B5;
+}
