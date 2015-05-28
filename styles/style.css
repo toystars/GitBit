@@ -1,5 +1,5 @@
-/*      Imported Fonts
-================================================== */
+/*  IMPORTED FONTS */
+
 @font-face {  font-family: "CaviarDreams";
 src: url("../fonts/caviar_dreams/CaviarDreams.ttf");}
 
@@ -24,9 +24,10 @@ src: url('../fonts/roboto/Roboto-Medium.ttf');}
 @font-face {  font-family: "Roboto-Regular";
 src: url('../fonts/roboto/Roboto-Regular.ttf');}
 
-/* Scroll Bar
-  ================================================== */
-::-webkit-scrollbar {width: 8px; height: 2px;}
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar {width: 6px; height: 2px;}
 ::-webkit-scrollbar-track {
   background-color: #ddd;
   opacity: .2;
@@ -50,10 +51,10 @@ md-list .md-button {
   width: 100%;
 }
 
-.gitbit_info-container {
+/*.gitbit_info-container {
   position: absolute; left: -18px;
   margin-top: 70px;
-}
+}*/
 
 .gitbit_info{  
   font-size: 40px;
@@ -62,7 +63,7 @@ md-list .md-button {
 }
 
 .profile {
-  margin: 60px 20px;
+  margin: auto;
   text-align: center;
 }
 
@@ -81,15 +82,15 @@ md-list .md-button {
   margin-top: -10px;
 }
 
-.search_field {
-  padding: 3px 16px;
-}
-
 .main-container-card {
   overflow-y: scroll;
-  height: 570px;
+  height: 545px;
 }
 
 .main-content {
   padding: 6px;
+}
+
+md-input-container label {
+  top: -5px;
 }
