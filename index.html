@@ -32,6 +32,8 @@
         </md-tooltip>
       </div>
 
+      <md-divider class="hr"></md-divider>
+
       <div class="md-list-item-text">
         <!-- Username -->
         <h1> {{ userFullName }} </h1>
@@ -106,12 +108,12 @@
 
     <!-- The content area -->
     <div layout="column" flex id="content">
-      <md-content layout="column" flex class="md-padding">
+      <md-content flex class="md-padding">
         <!-- The search container -->
         <md-card class="search-card">
           <md-card-content>
             <div class="search_field">
-              <md-content>
+              <md-content layout-padding>
                 <form layout="row">
                   <md-input-container flex>
                     <label>Search GitBit (e.g. andela-example)</label>
@@ -133,27 +135,29 @@
         <div>
           <md-content class="md-padding">
             <md-tabs md-dynamic-height md-border-bottom>
+              <!-- repository repeater -->
               <md-tab label="Repository">
                 <md-content class="md-padding">
-                   <md-list-item class="md-2-line outer-list" ng-repeat="repo in repoArray">
-                    <a href="{{ repo.html_url }}" class="repeater-container" target="_blank">
-                      <md-list-item class="md-2-line inner-list">
+                   <md-list-item ng-repeat="repo in repoArray">
+                    <a href="{{ repo.html_url }}" type="link" target="_blank">
+                      <md-list-item>
                         <div class="md-list-item-text">
-                          <h4>{{ repo.name }}</h4>
-                          <h4>{{ repo.description }}</h4>
-                          <h4>{{ repo.login }}</h4>
-                          <h4>{{ repo.size }} Files</h4>
+                          <h2 class="md-display-1"><i class="fa fa-info icon"></i> {{ repo.name }}</h2>
+                          <h4 class="md-title"><i class="fa fa-tags icon"></i>{{ repo.description }}</h5>                       
+                          <h6 class="md-subhead"><i class="fa fa-file icon"></i> {{ repo.size }} files</h6>
                         </div>
                       </md-list-item>
+                      <md-divider></md-divider>
                     </a>
                   </md-list-item>
                 </md-content>
-              </md-tab>
+              </md-tab> 
+              <!-- followers repeater -->
               <md-tab label="Followers">
                 <md-content class="md-padding">
-                  <md-list-item class="md-2-line outer-list" ng-repeat="followers in followersArray">
-                    <a href="{{ followers.html_url }}" class="repeater-container" target="_blank">
-                      <md-list-item class="md-2-line inner-list">
+                  <md-list-item class="outer-list" ng-repeat="followers in followersArray">
+                    <a href="{{ followers.html_url }}" type="link" target="_blank">
+                      <md-list-item class="inner-list">
                         <img class="avatar" ng-src="{{ followers.avatar_url }}" alt="{{ followers.login }}">
                         <div class="md-list-item-text">
                           <h4>{{ followers.login }}</h4>
@@ -163,20 +167,21 @@
                   </md-list-item>
                 </md-content>
               </md-tab>
+              <!-- following repeater -->
               <md-tab label="Following">
                 <md-content class="md-padding">
-                  <md-list-item class="md-2-line outer-list" ng-repeat="following in followingArray">
-                    <a href="{{ following.html_url }}" class="repeater-container" target="_blank">
-                      <md-list-item class="md-2-line inner-list">
+                  <md-list-item class="outer-list" ng-repeat="following in followingArray">
+                    <a href="{{ following.html_url }}" type="link" target="_blank">
+                      <md-list-item>
                         <img class="avatar" ng-src="{{ following.avatar_url }}" alt="{{ following.login }}">
-                        <div class="md-list-item-text">
+                        <div class="inner-list">
                           <h4>{{ following.login }}</h4>
                         </div>
                       </md-list-item>
                     </a>
                   </md-list-item>
                 </md-content>
-              </md-tab>
+              </md-tab>           
             </md-tabs>
           </md-content>
         </div>
