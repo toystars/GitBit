@@ -9,8 +9,11 @@
   <!-- styles -->
   <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
 
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" type="text/css" href="styles/font-awesome.min.css">
+
   <!-- custom -->
-  <link rel="stylesheet" type="text/css" href="styles/angular-style.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body layout="column" ng-controller="mainController">
   <!-- The top toolbar -->
@@ -24,7 +27,7 @@
     <!-- UserProfile -->
     <div class="profile">
       <div>
-        <img ng-src="http://churchofzer.com/img/melvins-joe.jpg" alt="" class="md-avatar face">
+        <img ng-src="http://churchofzer.com/img/melvins-joe.jpg" alt="Profile Picture" class="md-avatar face">
         <md-tooltip>
             Profile Picture
         </md-tooltip>
@@ -38,13 +41,13 @@
       <div class="md-list-item-text">
         <h3 class="ng-binding">Brunch this weekend?</h3>
         <!-- user email -->
-        <p class="ng-binding email"><strong>n.garner@example.com</strong></p>
-        <h4 class="ng-binding"> I'll be in your neighborhood doing errands</h4>
-      </div>
-    </div>
-    <div>
-      <div class="gitbit_info-container">
-        <h1 class="md-toolbar-tools gitbit_info" layout-align-gt-sm="right">GitBit</h1>
+        <p class="ng-binding email"><i class="fa fa-send"></i><strong> n.garner@example.com</strong>
+          <md-tooltip>
+                Email Address
+          </md-tooltip>
+        </p>
+        <!-- Repo URL -->
+        <h4 class="ng-binding"><i class="fa fa-"></i> I'll be in your neighborhood doing errands</h4>
       </div>
     </div>
     </md-sidenav>
@@ -54,16 +57,20 @@
       <md-content layout="column" flex class="md-padding">
         <!-- The search container -->
         <md-card class="search-card">
-          <md-card-content class="search_field">
+          <md-card-content>
             <md-content>
-              <md-input-container>
-                <label>Search GitBit (e.g. andela-example)</label>
-                <input required name="search" ng-model="search">
-                <div ng-messages="search.$error">
-                  <div ng-message="required">This is required.</div>
-                </div>
-                <!-- <button type="submit" ng-submit="searchUser()"></button> -->
-              </md-input-container>
+              <form layout="row" ng-submit="searchUser()">
+                <md-input-container flex>
+                  <label>Search GitBit (e.g. andela-example)</label>
+                  <input required name="search" ng-model="search">
+                  <div ng-messages="search.$error">
+                    <div ng-message="required">This is required.</div>
+                  </div>
+                </md-input-container>
+                <md-button class="md-icon-button md-primary" type="submit" aria-label="search">
+                  <i class="fa fa-search"></i>
+                </md-button>
+              </form>
             </md-content>
           </md-card-content>
         </md-card>
@@ -72,7 +79,7 @@
         <div layout="row" flex>
           <md-card flex class="main-container-card">
             <md-card-content>
-              <md-content>
+              <md-content class="main-content">
                  <!-- other info here -->
               </md-content>
           </md-card>
@@ -80,8 +87,6 @@
       </md-content>
     </div>    
   </div>
-
-
 
     <!-- Scripts -->
     
