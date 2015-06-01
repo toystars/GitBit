@@ -48,16 +48,22 @@ app.controller('mainController', ['$scope', '$mdSidenav', 'apiCall', function($s
       $scope.show = false;
       $scope.tip = false;
     }
-  }
+  };
+
+  function throwError() {
+    alert('Error from server!');
+  };
 
   // function that consumes the apiCall service to fetch the data from github
   $scope.getUserObject = function(username) {
     $scope.show = false;
     $scope.tip = false;
 
-    apiCall.fetchUser(username).success(manipulateApiResponse);
-    apiCall.fetchFollowers(username).success(manipulateFollowersArray);
-    apiCall.fetchFollowing(username).success(manipulateFollowingArray);
-    apiCall.fetchRepo(username).success(manipulateRepoArray);
+    apiCall.fetchUser(username).success(
+      manipulateApiResponse,
+      apiCall.fetchFollowers(username).success(manipulateFollowersArray),
+      apiCall.fetchFollowing(username).success(manipulateFollowingArray),
+      apiCall.fetchRepo(username).success(manipulateRepoArray)
+    ).error(throwError);
   };
 }]);
