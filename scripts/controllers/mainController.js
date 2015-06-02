@@ -52,7 +52,7 @@ app.controller('mainController', ['$scope', '$mdSidenav', 'apiCall', function($s
 
   function throwError() {
     // better error notification to come later
-    alert('Error from server!');
+    document.getElementById('dialog').showModal();
   };
 
   // function that consumes the apiCall service to fetch the data from github

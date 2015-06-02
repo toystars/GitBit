@@ -154,3 +154,23 @@ a[type="link"]{
   text-transform: uppercase;
   margin: 150px auto;
 }
+
+#dialog {
+  margin: auto;
+  text-align: center;
+  background-color: #da4f49;
+  color: #fff;
+  border-radius: 10px;
+  opacity: .9;
+  padding: 20px 60px;
+  font-size: 14px; 
+  border: 2px solid #ddd;
+  box-shadow: rgba(0, 0, 0, 0.027647) 0px 0px 2px 2px, 
+              rgba(0, 0, 0, 0.128647) 0px 0px 2px 2px, 
+              rgba(0, 0, 0, 0.019647) 0px 0px 2px 2px;
+}
+
+#dialog img {
+  height: auto;
+  width: 80px;
+}

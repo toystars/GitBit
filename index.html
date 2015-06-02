@@ -119,7 +119,7 @@
                   <md-input-container flex>
                     <label>Search GitBit (e.g. andela-example)</label>
                     <input required name="searchQuery" ng-model="searchQuery">
-                    <div ng-messages="searchQuery.$error">
+                    <div ng-messages="searchQuery">
                       <div ng-message="required">This is required.</div>
                     </div>
                   </md-input-container>
@@ -189,6 +189,12 @@
         <p class="tip" ng-hide="tip">GitBit enables you grab a github user and get detailed  information about such user...<br>
           To Get Started, Enter a Github user's username and click on search (or tap the enter button). 
         </p>
+        <dialog id="dialog">
+            <img src="images/brand.png">
+            <p>Octo's Dead</p>
+            <p>An error as occurred!</p>
+            <p><strong>Note: Press ESC to leave Or Reload page</strong></p>
+        </dialog>
       </md-content>
     </div>    
   </div>
