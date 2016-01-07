@@ -3,12 +3,12 @@
 ### v0.1
 
 ## About And Showcase Demo
-GitBit is a web Application that uses Github API to fetch User Information based on the Username provided, created using HTML, CSS, Angular JS And Angular Material, (visit [here](http://andela-abankole.github.io/GitBit) for more).
+GitBit is a web Application that uses Github API to fetch User Information based on the Username provided, created using HTML, CSS, Angular JS And Angular Material, (visit [here](http://toystars.github.io/GitBit) for more).
 
 #### Authors 
 [Akinjide Bankole](https://github.com/andela-abankole)
 
-[Babatunde Mustapha](https://github.com/andela-bmustapha)
+[Babatunde Mustapha](https://github.com/toystars)
 
 
 ## How To Use
